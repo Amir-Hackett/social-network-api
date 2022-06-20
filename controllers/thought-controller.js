@@ -77,6 +77,40 @@ const thoughtController = {
                 return res.json(dbUserData);
             })
             .catch(err => res.json(err));
+        },
+
+        // post reaction
+        addReaction({ params, body }, res) {
+            Thought.findOneAndUpdate(
+                { _id: params.thoughtId },
+                { $addToSet: { reactions: body } },
+                { new: true, runValidators: true }
+            )
+                .then(dbUserData => {
+                    if (!dbUserData) {
+                        res.status(404).json({ message: 'No thought found with this ID!' });
+                        return;
+                    }
+                    return res.json(dbUserData);
+                })
+                .catch(err => res.json(err));
+        },
+    
+        // delete reaction
+        deleteReaction({ params }, res) {
+            Thought.findOneAndUpdate(
+                { _id: params.thoughtId },
+                { $pull: { reactions: { reactionId: params.reactionId } } },
+                { new: true }
+            )
+                .then(dbUserData => {
+                    if (!dbUserData) {
+                        res.status(404).json({ message: 'No reaction found with that ID!' });
+                        return;
+                    }
+                    return res.json(dbUserData);
+                })
+                .catch(err => res.json(err));
     }
 };
 
