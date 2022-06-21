@@ -1,4 +1,4 @@
-const { User } = require('../models/index');
+const { User, Thought } = require('../models/index');
 
 const userController = {
 
@@ -11,7 +11,7 @@ const userController = {
             .then(dbUserData => res.json(dbUserData))
             .catch(err => {
                 console.log(err);
-                res.status(400).json(err);
+                return res.status(400).json(err);
             });
     },
 
@@ -26,11 +26,11 @@ const userController = {
                     res.status(404).json({ message: 'No user found with this ID!' });
                     return;
                 }
-                res.json(dbUserData);
+                return res.json(dbUserData);
             })
             .catch(err => {
                 console.log(err);
-                res.status(400).json(err);
+                return res.status(400).json(err);
             });
     },
 
@@ -53,7 +53,7 @@ const userController = {
                     res.status(404).json({ message: 'No user found with this ID!' });
                     return;
                 }
-                res.json(dbUserData);
+                return res.json(dbUserData);
             })
             .catch(err => res.status(400).json(err));
     },
@@ -66,8 +66,9 @@ const userController = {
                     res.status(404).json({ message: 'No user found with this ID!' });
                     return;
                 }
-                res.json(dbUserData);
+                return Thought.deleteMany({ userId: params.id })
             })
+            .then(data => res.json(data))
             .catch(err => res.status(400).json(err));
     },
 
@@ -83,7 +84,7 @@ const userController = {
                     res.status(404).json({ message: 'No user found with this ID!' });
                     return;
                 };
-                res.json(dbUserData);
+                return res.json(dbUserData);
             })
             .catch(err => res.json(err));
     },
