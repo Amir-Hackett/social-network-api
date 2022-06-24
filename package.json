@@ -4,12 +4,12 @@
     "mongoose": "^6.4.0"
   },
   "name": "social-network-api",
-  "description": "",
+  "description": "## Description *An API for a social network that uses a NoSQL database so that the website can handle large amounts of unstructured data*",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "devDependencies": {},
   "scripts": {
-    "start": "server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
