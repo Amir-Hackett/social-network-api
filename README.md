@@ -27,7 +27,10 @@ GIVEN a social network API
 ## Video Description
 This application demonstrates the database for a social networking application. API routes are tested through Insomnia. Following demo's show various functionalities of the application.
 
+* This video shows the User and Friend Routes
 
+
+* This video shows the Thoughts and Reaction Routes
 
 ## Schema Description
 
