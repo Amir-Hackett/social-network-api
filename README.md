@@ -30,7 +30,16 @@ This application demonstrates the database for a social networking application. 
 * This video shows the User and Friend Routes
 
 
+https://user-images.githubusercontent.com/99042050/175827332-4b13b37e-0a64-42a5-928e-74ad028efc82.mp4
+
+
+
 * This video shows the Thoughts and Reaction Routes
+
+
+https://user-images.githubusercontent.com/99042050/175827337-576cd326-f0a1-421a-a146-d9b97e1652b7.mp4
+
+
 
 ## Schema Description
 
