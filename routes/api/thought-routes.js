@@ -26,7 +26,7 @@ router.route('/:userId/:thoughtId')
 
 // set up POST reaction at /api/thoughts/:userId/:thoughtId/reaction
 router.route('/:userId/:thoughtId/reactions/')
-.put(addReaction)
+.post(addReaction)
 
 // set up POST reaction at /api/thoughts/:userId/:thoughtId/reactions/:reactionId
 router.route('/:userId/:thoughtId/reactions/:reactionId')
